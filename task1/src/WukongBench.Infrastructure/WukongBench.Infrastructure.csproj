@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    INFRASTRUCTURE LAYER
+    ====================
+    Implements the Domain ports against the real world
+    (file system, Steam, UE5 ini files, Win32 process/input, WMI).
+
+    Depends ONLY on the Domain layer.
+    It must never reference the Application layer.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>WukongBench.Infrastructure</RootNamespace>
+    <AssemblyName>WukongBench.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WukongBench.Domain\WukongBench.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    PRESENTATION LAYER
+    ==================
+    Console entry point. This is the ONLY place where the object graph is
+    composed (Dependency Injection): it references Domain + Application +
+    Infrastructure and wires Infrastructure implementations onto Application
+    use cases / Domain ports. It also renders the final report.
+
+    Application and Infrastructure never see each other.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>WukongBench.Presentation</RootNamespace>
+    <AssemblyName>wukongbench</AssemblyName>
+    <RollForward>LatestMajor</RollForward>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WukongBench.Domain\WukongBench.Domain.csproj" />
+    <ProjectReference Include="..\WukongBench.Application\WukongBench.Application.csproj" />
+    <ProjectReference Include="..\WukongBench.Infrastructure\WukongBench.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

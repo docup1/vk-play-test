@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    DOMAIN LAYER
+    ============
+    Contains ONLY:
+      * models (immutable data holders with a constructor and read-only properties)
+      * abstractions (interfaces = ports)
+      * enums and constants
+
+    Deliberately has ZERO package references and ZERO logic, so that it cannot
+    depend on anything and everything else can depend on it.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>WukongBench.Domain</RootNamespace>
+    <AssemblyName>WukongBench.Domain</AssemblyName>
+  </PropertyGroup>
+
+</Project>
