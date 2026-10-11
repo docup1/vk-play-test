@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>WeatherApp.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Application знает только о Domain. Об Infrastructure он не знает ничего. -->
+    <ProjectReference Include="..\WeatherApp.Domain\WeatherApp.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

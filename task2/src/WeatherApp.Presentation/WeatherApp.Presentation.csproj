@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>WeatherApp.Presentation</RootNamespace>
+    <AssemblyName>WeatherApp</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Presentation связывает все слои: здесь выполняется DI (композиция). -->
+    <ProjectReference Include="..\WeatherApp.Domain\WeatherApp.Domain.csproj" />
+    <ProjectReference Include="..\WeatherApp.Application\WeatherApp.Application.csproj" />
+    <ProjectReference Include="..\WeatherApp.Infrastructure\WeatherApp.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Cities.txt" Link="Cities.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
